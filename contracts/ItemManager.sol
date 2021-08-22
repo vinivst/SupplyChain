@@ -11,9 +11,11 @@ contract ItemManager is Ownable {
         Item _item;
         ItemManager.SupplyChainSteps _step;
         string _identifier;
+        uint _id;
+        uint _cost;
     }
     mapping(uint => S_Item) public items;
-    uint index;
+    uint public index;
 
     enum SupplyChainSteps {Created, Paid, Delivered}
 
@@ -24,6 +26,8 @@ contract ItemManager is Ownable {
         items[index]._item = item;
         items[index]._step = SupplyChainSteps.Created;
         items[index]._identifier = _identifier;
+        items[index]._id = index;
+        items[index]._cost = _priceInWei;
         emit SupplyChainStep(index, uint(items[index]._step), address(item));
         index++;
     }
