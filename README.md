@@ -24,23 +24,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://rocky-headland-98667.herokuapp.com/">
-    <img src="./images/wallet.jpg" alt="Logo" width="80" height="80">
+  <a href="https://murmuring-headland-95829.herokuapp.com/">
+    <img src="./images/supplychain.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Multisig Dapp</h3>
+  <h3 align="center">Eccommerce Inventory - Supply Chain</h3>
 
   <p align="center">
-    A Multisig Wallet demo using Solidity, React, Truffle and Web3.
+    An Inventory Manager demo using Solidity, React, Truffle, Web3 and OpenZeppelin.
     <br />
-    <a href="https://github.com/vinivst/MultisigWallet/#getting-started"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/vinivst/SupplyChain/#getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://rocky-headland-98667.herokuapp.com/">View Demo</a>
+    <a href="https://murmuring-headland-95829.herokuapp.com/">View Demo</a>
     ·
-    <a href="https://github.com/vinivst/MultisigWallet/issues">Report Bug</a>
+    <a href="https://github.com/vinivst/SupplyChain/issues">Report Bug</a>
     ·
-    <a href="https://github.com/vinivst/MultisigWallet/issues">Request Feature</a>
+    <a href="https://github.com/vinivst/SupplyChain/issues">Request Feature</a>
   </p>
 </p>
 
@@ -74,15 +74,28 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://rocky-headland-98667.herokuapp.com/)
+[![Product Name Screen Shot][product-screenshot]](https://murmuring-headland-95829.herokuapp.com/)
 
-A Multisig Wallet implemented in Kovan Test Network that allows you to:
+An Inventory Manager implemented in Rinkeby Test Network that allows you to:
 
-- Have your own shared wallet
-- See who the approvers are
-- Requests new transfers
-- Check the status of requested transfers
-- When the amount of approvals reachs the quorum, the transfer is automatically sent
+- Register a new item
+- Pay for the item
+- "Send" the item for customer
+- Track the status of all items
+
+Whenever a item changes it's status, an event is emitted by the smart contract and the React interface is listening to update the UI accordingly.
+
+There are 3 events:
+
+    - When a new item is created;
+    - When an item is paid;
+    - When an item is sent;
+
+And 3 possible status:
+
+    - 0: Item created;
+    - 1: Item was paid;
+    - 2: Item was sent;
 
 A list of commonly used resources that I find helpful are listed in the acknowledgements.
 
@@ -94,6 +107,7 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 - [Truffle](https://www.trufflesuite.com/)
 - [Web3](https://web3js.readthedocs.io/)
 - [Metamask](https://metamask.io/)
+- [OpenZeppelin](https://openzeppelin.com/)
 
 <!-- GETTING STARTED -->
 
@@ -112,7 +126,7 @@ You need to have npm installed.
 
 1. Clone the repo (--recurse-submodules to include the client's submodule folder)
    ```sh
-   git clone --recurse-submodules https://github.com/vinivst/MultisigWallet.git
+   git clone --recurse-submodules https://github.com/vinivst/SupplyChain.git
    ```
 2. Install NPM packages in project ("backend")
    ```sh
@@ -142,29 +156,29 @@ You need to have npm installed.
    cd client
    npm start
    ```
-9. Enjoy your own Shared Wallet! :smile:
+9. Enjoy your own Inventory Manager on chain! :smile:
 
 <!-- USAGE EXAMPLES -->
 
 ## Usage (Metamask didn't shows in the gifs)
 
-Approvers can create a new transfer request:
+Manager can create a new item:
 
-![Create Transfer Request](./images/createTransfer.gif)
+![Create New Item](./images/createItem.gif)
 
-Approvers can approve transfer requests:
+Then a customer can pay for an item:
 
-![Approve Transfer Request](./images/approveTransfer.gif)
+![Pay for an item](./images/payItem.gif)
 
-When the minimum quorum of approvals is reached, the transfer is automatically sent:
+When an item is paid, manager can send the item to the customer:
 
-![Sent Transfer](./images/transferSent.gif)
+![Send Item](./images/sendItem.gif)
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-See the [open issues](https://github.com/vinivst/MultisigWallet/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/vinivst/SupplyChain/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 
@@ -190,7 +204,7 @@ Distributed under the GNU GPLv3 License. See `LICENSE` for more information.
 
 Vinicius Santiago - [Linkedin](https://www.linkedin.com/in/vinivst/)
 
-Project Link: [https://github.com/vinivst/MultisigWallet](https://github.com/vinivst/MultisigWallet)
+Project Link: [https://github.com/vinivst/SupplyChain](https://github.com/vinivst/SupplyChain)
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -203,16 +217,16 @@ Project Link: [https://github.com/vinivst/MultisigWallet](https://github.com/vin
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/vinivst/MultisigWallet.svg?style=for-the-badge
-[contributors-url]: https://github.com/vinivst/MultisigWallet/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/vinivst/MultisigWallet.svg?style=for-the-badge
-[forks-url]: https://github.com/vinivst/MultisigWallet/network/members
-[stars-shield]: https://img.shields.io/github/stars/vinivst/MultisigWallet.svg?style=for-the-badge
-[stars-url]: https://github.com/vinivst/MultisigWallet/stargazers
-[issues-shield]: https://img.shields.io/github/issues/vinivst/MultisigWallet.svg?style=for-the-badge
-[issues-url]: https://github.com/vinivst/MultisigWallet/issues
-[license-shield]: https://img.shields.io/github/license/vinivst/MultisigWallet.svg?style=for-the-badge
-[license-url]: https://github.com/vinivst/MultisigWallet/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/vinivst/SupplyChain.svg?style=for-the-badge
+[contributors-url]: https://github.com/vinivst/SupplyChain/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/vinivst/SupplyChain.svg?style=for-the-badge
+[forks-url]: https://github.com/vinivst/SupplyChain/network/members
+[stars-shield]: https://img.shields.io/github/stars/vinivst/SupplyChain.svg?style=for-the-badge
+[stars-url]: https://github.com/vinivst/SupplyChain/stargazers
+[issues-shield]: https://img.shields.io/github/issues/vinivst/SupplyChain.svg?style=for-the-badge
+[issues-url]: https://github.com/vinivst/SupplyChain/issues
+[license-shield]: https://img.shields.io/github/license/vinivst/SupplyChain.svg?style=for-the-badge
+[license-url]: https://github.com/vinivst/SupplyChain/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/vinivst/
 [product-screenshot]: ./images/screenshot.PNG
